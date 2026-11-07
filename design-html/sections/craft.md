@@ -48,6 +48,14 @@
 
 **Line breaks.** Browser-wrapped headings get `text-wrap: balance`, body `text-wrap: pretty`. Break display lines where the thought breaks; never one word alone on the last line.
 
+**UI craft checklist.** Build to these 20 checks from the first section and run them on the finished page; the rules above already carry 5, 14, 16 and 20 (scale, nested radius, balanced lines, motion as feedback). A Fail is fixed or listed as an accepted exception with a one-line reason.
+- Content: (1) no filler badges or pills that restate the headline; (2) no label that repeats its heading or control; (3) no italic on random words; (9) headlines say something specific, never "Powerful features"; (13) no decoration that carries no information.
+- Type and system: (4) mono only for code, commands and tabular figures; (5) one design system, tokens not one-offs; (14) inner radius = outer − padding; (16) headlines wrap on the thought; (17) align icons and optical edges by eye, not by pixel box; (18) `font-variant-numeric: tabular-nums` on any number that changes or sits in a column.
+- Hierarchy: (6) show the real product, not an abstract illustration; (7) the main feature is the largest object; (8) group with spacing, not borders and boxes; (10) one emphasized CTA; (11) one accent colour, used for action and state.
+- Craft: (12) one icon set, one grid and stroke weight; (15) text contrast 4.5:1 body, 3:1 large and UI.
+- States and motion: (19) anything that loads has a loading state; (20) animate only feedback the user caused.
+Severity: Fails on 5, 10, 15 and 16 block; 6, 7, 9 and 19 are High; the rest are polish. Checks 15, 17, 19 and 20 need a live page; from a still image tag them "verify live".
+
 **Motion.** These govern the one authored motion moment and state transitions; they license no more motion.
 - Content is visible by default; script adds the hidden start state only after the observer is set up (`.motion-ready` on `<html>`), so a script failure or a crawler sees everything and the CTA never waits on an animation.
 - Reveal with `IntersectionObserver` (`threshold: 0`, bottom `rootMargin` about −20%, once). Never an unthrottled `window.addEventListener('scroll')`; scroll-linked effects read scroll inside `requestAnimationFrame`.

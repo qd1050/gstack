@@ -1,0 +1,1 @@
+- `/design-html` now builds to a 20-check UI craft checklist (filler badges, redundant labels, mono type, one accent colour, real product shots, consistent icons, contrast, loading states and more), and `/design-review` audits finished pages against the same list. Fails are fixed or listed as accepted exceptions.
